@@ -12,6 +12,10 @@ jobs:
       with:
         python-version: '3.11'
     - name: Install dependencies
-      run: pip install pytest
+      run: pip install -r requirements.txt
+
+    - name: Lint with flake8
+      run: flake8 stream tests
+
     - name: Run tests
       run: PYTHONPATH=. pytest
