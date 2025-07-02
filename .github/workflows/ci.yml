@@ -5,20 +5,25 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+      - uses: actions/checkout@v3
 
-    - name: Lint with flake8
-      run: flake8 stream tests
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Lint with flake8
-      run: flake8 stream tests --exclude=stream/.ipynb_checkpoints,tests/.ipynb_checkpoints
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install flake8 pytest
 
-    - name: Run tests
-      run: PYTHONPATH=. pytest
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=." >> $GITHUB_ENV
+
+      - name: Lint with flake8 (excluding checkpoints)
+        run: flake8 stream tests --exclude=*/.ipynb_checkpoints/*
+
+      - name: Run tests
+        run: pytest
