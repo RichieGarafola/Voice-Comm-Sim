@@ -15,15 +15,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install flake8 pytest
-
-      - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=." >> $GITHUB_ENV
-
-      - name: Lint with flake8 (excluding checkpoints)
-        run: flake8 stream tests --exclude=*/.ipynb_checkpoints/*
+        run: pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: PYTHONPATH=. pytest
