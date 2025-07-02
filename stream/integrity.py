@@ -2,7 +2,6 @@
 import hashlib
 
 
-
 def hash_data(data):
     """
     Create a SHA-256 hash of the input data string.
@@ -14,7 +13,6 @@ def hash_data(data):
         str: Hexadecimal representation of the hash.
     """
     return hashlib.sha256(data.encode()).hexdigest()
-
 
 
 def create_chunk(index, data):
@@ -34,9 +32,8 @@ def create_chunk(index, data):
         # The actual content of the message
         "data": data,
         # Secure hash for data integrity
-        "hash": hash_data(data)
+        "hash": hash_data(data),
     }
-
 
 
 def validate_chunk(chunk):
@@ -50,4 +47,3 @@ def validate_chunk(chunk):
         bool: True if the data is intact (hashes match), False otherwise.
     """
     return chunk["hash"] == hash_data(chunk["data"])
-

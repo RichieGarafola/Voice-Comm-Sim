@@ -3,6 +3,7 @@
 from stream.receiver import reassemble
 from stream.integrity import create_chunk
 
+
 def test_reassemble_valid():
     """
     Test that the reassemble function correctly rebuilds a message

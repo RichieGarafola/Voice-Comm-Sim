@@ -2,6 +2,7 @@
 
 from stream.integrity import create_chunk, validate_chunk
 
+
 def test_valid_chunk():
     """
     Test that a properly created chunk passes validation.

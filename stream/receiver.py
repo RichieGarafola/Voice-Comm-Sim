@@ -3,7 +3,6 @@
 from .integrity import validate_chunk
 
 
-
 def reassemble(chunks):
     """
     Reassemble a complete message from a list of indexed chunks.
@@ -35,4 +34,3 @@ def reassemble(chunks):
         message += chunk["data"]
 
     return message
-
