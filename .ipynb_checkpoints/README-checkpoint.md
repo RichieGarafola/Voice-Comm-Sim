@@ -1,6 +1,6 @@
 # Voice Communication Simulator
 
-![CI](https://github.com/YOUR_USERNAME/voice_comm_sim/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/RichieGarafola/Voice-Comm-Sim/actions/workflows/ci.yml/badge.svg)
 
 This project simulates how a voice or message communication system might securely transmit and reassemble data in a controlled, verifiable way. The goal is to model how real-time data (like audio or text) is broken into smaller pieces, verified for integrity, and put back together in the correct order.
 

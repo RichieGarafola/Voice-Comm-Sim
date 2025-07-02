@@ -1,5 +1,7 @@
- # Provide hash creation and chunk validation
+# Provide hash creation and chunk validation
 import hashlib
+
+
 
 def hash_data(data):
     """
@@ -12,6 +14,8 @@ def hash_data(data):
         str: Hexadecimal representation of the hash.
     """
     return hashlib.sha256(data.encode()).hexdigest()
+
+
 
 def create_chunk(index, data):
     """
@@ -33,6 +37,8 @@ def create_chunk(index, data):
         "hash": hash_data(data)
     }
 
+
+
 def validate_chunk(chunk):
     """
     Validate a message chunk by comparing its stored hash to a recomputed one.
@@ -44,3 +50,4 @@ def validate_chunk(chunk):
         bool: True if the data is intact (hashes match), False otherwise.
     """
     return chunk["hash"] == hash_data(chunk["data"])
+

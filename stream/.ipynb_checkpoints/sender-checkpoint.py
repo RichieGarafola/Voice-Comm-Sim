@@ -13,4 +13,6 @@ def chunk_message(message, chunk_size=5):
             - index (int): Starting character index of the chunk
             - chunk_string (str): Substring of the original message
     """
-    return [(i, message[i:i+chunk_size]) for i in range(0, len(message), chunk_size)]
+    return [(i, message[i:i+chunk_size]) 
+            for i in range(0, len(message), chunk_size)]
+

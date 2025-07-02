@@ -17,5 +17,8 @@ jobs:
     - name: Lint with flake8
       run: flake8 stream tests
 
+    - name: Lint with flake8
+      run: flake8 stream tests --exclude=stream/.ipynb_checkpoints,tests/.ipynb_checkpoints
+
     - name: Run tests
       run: PYTHONPATH=. pytest

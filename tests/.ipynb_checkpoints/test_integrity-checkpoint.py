@@ -9,9 +9,9 @@ def test_valid_chunk():
     The hash should match the data, so validation should return True.
     """
     # Create chunk with index 0 and data "Hello"
-    chunk = create_chunk(0, "Hello")   
+    chunk = create_chunk(0, "Hello")
     # Should pass because data is unchanged
-    assert validate_chunk(chunk)       
+    assert validate_chunk(chunk)
 
 
 def test_invalid_chunk():
@@ -25,4 +25,4 @@ def test_invalid_chunk():
     # Tamper with the chunk after creation
     chunk["data"] = "Tampered"
     # Should fail validation
-    assert not validate_chunk(chunk)   
+    assert not validate_chunk(chunk)
