@@ -1,5 +1,7 @@
 # Voice Communication Simulator
 
+![CI](https://github.com/YOUR_USERNAME/voice_comm_sim/actions/workflows/ci.yml/badge.svg)
+
 This project simulates how a voice or message communication system might securely transmit and reassemble data in a controlled, verifiable way. The goal is to model how real-time data (like audio or text) is broken into smaller pieces, verified for integrity, and put back together in the correct order.
 
 It also includes a full suite of automated tests and a continuous integration (CI) pipeline using GitHub Actions, showing how software quality and reliability are ensured through modern DevOps practices.
